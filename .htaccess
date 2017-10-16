@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /small-framework                  #基于框架的根目录进行重定向
+    RewriteCond %{REQUEST_FILENAME} !-f    #如果用户请求的不是一个文件
+    RewriteCond %{REQUEST_FILENAME} !-d   #如果用户请求的不是一个目录
+    RewriteRule . index.php [L]                       #则重定向至index.php
+</IfModule>
